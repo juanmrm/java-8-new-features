@@ -11,4 +11,4 @@ With the Java 8 release, Java provided supports for functional programming, new 
 - Stream API: new stream API to facilitate pipeline processing.
 - Date Time API: improved date time API.
 - Optional: emphasis on best practices to handle null values properly.
-- Nashorn, JavaScript Engin: a Java-based engine to execute JavaScript code.
+- Nashorn, JavaScript Engine: a Java-based engine to execute JavaScript code.
