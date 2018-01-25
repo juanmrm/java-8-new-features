@@ -1,0 +1,25 @@
+= Lambda Expressions
+
+Lambda expressions are introduced in Java 8 and are touted to be the biggest feature of Java 8.
+Lambda expression facilitates functional programming, and simplifies the development a lot.
+
+'''
+
+==== Characteristics:
+- Syntax: parameter -> expression body
+- Optional type declaration: no need to declare the type of a parameter. The compiler can inference the same from the value of the parameter.
+- Optional parenthesis around parameter: no need to declare a single parameter in parenthesis. For multiple parameters, parentheses are required.
+- Optional curly braces: no need to use curly braces in expression body if the body contains a single statement.
+- Optional return keyword: the compiler automatically returns the value if the body has a single expression to return the value. Curly braces are required to indicate that expression returns a value.
+
+'''
+
+====  Important points to be considered:
+- Lambda expressions are used primarily to define inline implementation of a functional interface, i.e., an interface with a single method only.
+- Lambda expression eliminates the need of anonymous class and gives a very simple yet powerful functional programming capability to Java.
+
+'''
+
+==== Scope:
+Using lambda expression, you can refer to any final variable or effectively final variable (which is assigned only once).
+Lambda expression throws a compilation error, if a variable is assigned a value the second time.
