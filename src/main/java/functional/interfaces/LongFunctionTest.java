@@ -5,7 +5,7 @@ import java.util.function.LongFunction;
 class LongFunctionTest {
 
     public static void main(String[] args) {
-        LongFunction<String> i = (l) -> Long.toString(l);
+        LongFunction<String> i = Long::toString;
 
         System.out.println(i.apply(Long.MAX_VALUE));
     }

@@ -10,7 +10,7 @@ class BiFunctionTest {
 
     public static void main(String[] args) {
         BiFunction<String, String, String> bi = (x, y) -> x.concat(" ").concat(y);
-        System.out.println(bi.andThen(z -> "Resultado Concatenado: ".concat(z)).apply("bifunction", " test"));
+        System.out.println(bi.andThen("Resultado Concatenado: "::concat).apply("bifunction", " test"));
 
         // how to use BiFunction as a parameter
         Calculator calculator = new Calculator();

@@ -12,7 +12,11 @@ class TesterLambda {
         MathOperation subtraction = (a, b) -> a - b;
 
         //with return statement along with curly braces
-        MathOperation multiplication = (int a, int b) -> { return a * b; };
+        MathOperation multiplication = (int a, int b) -> {
+            a *= 2;
+            b *= 2;
+            return a * b;
+        };
 
         //without return statement and without curly braces
         MathOperation division = (int a, int b) -> a / b;
