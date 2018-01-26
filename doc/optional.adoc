@@ -1,0 +1,41 @@
+= Java Optional
+
+Java 8 has introduced an java.util.Optional<T> class to deal with NullPointerException gracefully.
+
+Characteristics:
+
+- Is a wrapper for a non-null value that may or may not contain a non-null value.
+- Methods that may return null should return an Optional instead of null.
+- The isPresent() from Optional<T> returns true if it contains a non-null value, false otherwise.
+- get() method returns the non-null value if it contains a non-null value, and throws a NoSuchElementException otherwise.
+
+Good practice is to call isPresent() before calling get().
+
+'''
+
+==== Create Optional Object
+The Optional<T> class provides three static factory methods to create Optional objects:
+
+- <T> Optional<T> empty(): returns an empty Optional that contains a null value.
+- <T> Optional<T> of(T value): returns an Optional containing the specified value as the non-null value. If provided value is null, it throws a NullPointerException.
+- <T> Optional<T> ofNullable(T value): returns an Optional containing the specified value if the value is non-null. If the specified value is null, it returns an empty Optional.
+
+==== Optional ifPresent
+ifPresent(Consumer<? super T> action) method from the Optional class takes an action on the value contained in the Optional.
+
+If the Optional is empty, this method does not do anything.
+
+==== Optional Value
+How to get the value from an Optional?
+
+- _T get()_: value contained or if the Optional is empty, it throws a NoSuchElementException.
+- _T orElse(T defaultValue)_: value contained or if the Optional is empty, it returns the specified defaultValue.
+- _T orElseGet(Supplier<? extends T> defaultSupplier)_: value contained or if the Optional is empty, it returns the value returned from the specified defaultSupplier.
+- _<X extends Throwable> T orElseThrow(Supplier<? extends X> exceptionSupplier) throws X extends Throwable_ : value contained or if the Optional is empty, it throws the exception returned from the specified exceptionSupplier.
+
+OptionalInt, OptionalLong, and OptionalDouble deal with optional primitive values.
+
+==== Stream Optional Value
+Some stream operations return optional. For example, the max() method in all stream classes returns an optional object.
+
+By using Optional class we can handle the return value from those methods gracefully.

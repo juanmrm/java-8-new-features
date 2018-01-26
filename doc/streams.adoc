@@ -1,0 +1,89 @@
+= Java Stream
+
+A stream is a sequence of data values supporting sequential and parallel aggregate operations.
+
+We use the aggregate functions in SQL more often. An aggregate operation works on a list of item and results in a single value.
+The result of an aggregate operation on stream may be a primitive value, an object, or a void for Stream.
+
+'''
+
+== Streams Features (Collection vs Stream)
+==== No Storage
+- A *collection* is an in-memory data structure that stores all its elements.
+- A *stream* pulls elements from a data source on-demand and passes them to a pipeline of operations for processing.
+- For a *collection* we talk about the storage or how the data elements are stored, how to access data elements.
+- For a *stream* we focus on the operations, for example, how to sum a stream.
+
+==== Infinite Streams
+- A collection cannot represent a group of infinite elements whereas a stream can.
+- A stream can pull its elements from a data source. The data source can be a collection, a function that generates data, an I/O channel, etc.
+(p.e: a stream can pull data from from a function which generates infinite number of elements)
+
+==== Not Reusable
+- A stream cannot be reused after calling a terminal operation.
+- To perform a computation on the same elements from the same data source, we have to recreate the stream pipeline.
+- A stream may throw an IllegalStateException in case of reusing.
+
+'''
+
+== Java Stream Operation
+==== External Iteration vs Internal Iteration
+- With Collections we use external iteration. In external iteration we use a for or for each loop or obtain an iterator for a collection and process elements of the collections in a sequence.
+- With Stream we didn't use loop statement to iterate through the List. We did the loop internally by stream.
+
+==== Sequential
+- External iteration typically means sequential code -> sequential code can be executed only by one thread.
+- Streams are designed to process elements in parallel -> just replace stream() with parallelStream().
+
+==== Imperative vs Functional
+- In imperative programming we control not only what to do but also how to do it.
+- In declarative programming we just need to tell what to do, the how part is handled by the system itself.
+- Collections support imperative programming whereas streams support declarative programming.
+- The Streams API supports the functional programming by using lambda expression.
+- Operations on a stream produce a result without modifying the data source.
+
+==== Intermediate vs Terminal operations
+- Intermediate operations -> lazy operations, Terminal operations -> eager operations.
+
+    A lazy operation does not process the elements until an eager operation is called on the stream.
+
+- An intermediate operation on a stream produces another stream and we use streams link operations to create a stream pipeline.
+
+== Stream API
+Stream-related interfaces and classes are in the java.util.stream package.
+
+[source,java]
+----
+AutoCloseable (java.lang package)
+ |
+ +--BaseStream (java.util.stream package)
+     |
+     +--IntStream
+     |
+     +--LongStream
+     |
+     +--DoubleStream
+     |
+     +--Stream<T>
+----
+
+Collections don't need to be closed, but a stream based on a closeable data source such as a file I/O channel, we can create the stream using a *try-with-resources* statement to get it closed automatically.
+
+==== BaseStream
+BaseStream interface defines all methods common to all types of streams:
+
+- Iterator<T> iterator(): terminal operation that returns an iterator for the stream.
+- sequential(): intermediate operation, returns a sequential stream. It converts a parallel stream into a sequential stream.
+- parallel(): intermediate operation, returns a parallel stream. It convert a sequential stream into a parallel stream.
+- boolean isParallel(): returns true if the stream is parallel, false otherwise.
+- unordered(): intermediate operation, returns an unordered version of the stream.
+
+==== Stream
+Stream<T> interface represents a stream of the element type T.
+
+The Stream<T> interface contains methods such as filter(), map(), reduce(), collect(), max(), min(), etc.
+
+==== Ordered Streams vs. unordered Streams
+A stream can be ordered or unordered. An ordered stream keeps the order of its elements.
+
+The Streams API can convert an ordered stream to unordered or viceversa by applying an sorting intermediate operation.
