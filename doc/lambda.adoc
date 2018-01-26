@@ -42,3 +42,6 @@ The compiler uses the following rules to determine whether a lambda expression i
 ==== Scope:
 Using lambda expression, you can refer to any final variable or effectively final variable (which is assigned only once).
 Lambda expression throws a compilation error, if a variable is assigned a value the second time.
+
+A lambda expression does not define a scope of its own.
+If we use keywords _this_ and _super_ in lambda expression inside a method, they act the same as we use them in that method.

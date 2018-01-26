@@ -3,7 +3,10 @@
 Functional interfaces have a single functionality to exhibit. For example, a Comparable interface with a single method
 ‘compareTo’ is used for comparison purpose. Java 8 has defined a lot of functional interfaces to be used extensively in lambda expressions.
 
-To define our own functional interfaces we should use @FunctionalInterface
+- To define our own functional interfaces we should use @FunctionalInterface.
+- A lambda expression represents an instance of a functional interface.
+- The type of a lambda expression is inferred by the compiler.
+- An interface with one abstract method is still a functional interface even if we don't annotated it with @FunctionalInterface.
 
 '''
 

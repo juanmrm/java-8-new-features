@@ -6,3 +6,25 @@ A method reference can be used to point the following types of methods.
 - Static methods
 - Instance methods
 - Constructors using new operator (TreeSet::new)
+
+We can use generic methods in method reference by specifying the actual type parameter.
+
+- The syntax is as follows _ClassName::<TypeName>methodName_
+- The syntax for generic constructor reference _ClassName<TypeName>::new_
+
+'''
+
+The general syntax for a method reference is:
+
+- Qualifier::MethodName (p.e: String::length)
+
+'''
+
+There are six types of method reference.
+
+- TypeName::staticMethod - reference to a static method of a class, an interface, or an enum
+- objectRef::instanceMethod - reference to an instance method
+- ClassName::instanceMethod - reference to an instance method from a class
+- TypeName.super::instanceMethod - reference to an instance method from the supertype of an object
+- ClassName::new - reference to the constructor of a class
+- ArrayTypeName::new - reference to the constructor of the specified array type
