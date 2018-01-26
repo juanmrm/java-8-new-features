@@ -87,3 +87,21 @@ The Stream<T> interface contains methods such as filter(), map(), reduce(), coll
 A stream can be ordered or unordered. An ordered stream keeps the order of its elements.
 
 The Streams API can convert an ordered stream to unordered or viceversa by applying an sorting intermediate operation.
+
+'''
+
+=== Java Stream Create
+
+You can create a stream:
+
+- from values: _<T> Stream<T> of(T t) or <T> Stream<T> of(T...values)_
+- from Empty streams
+- from functions
+- from arrays
+- from collections
+- from files
+- from other sources
+
+IntStream, LongStream, DoubleStream from range: _range(int start, int end) or rangeClosed(int start, int end)_
+
+Stream interface to create an empty sequential stream: Stream.empty();

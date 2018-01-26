@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>Java 8 New Features</name>
-    <description>Project for testing java 8 new feaures</description>
+    <description>Project for testing java 8 new features</description>
 
     <properties>
         <lombok.version>1.16.20</lombok.version>
