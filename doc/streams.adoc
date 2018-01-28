@@ -24,8 +24,6 @@ The result of an aggregate operation on stream may be a primitive value, an obje
 - To perform a computation on the same elements from the same data source, we have to recreate the stream pipeline.
 - A stream may throw an IllegalStateException in case of reusing.
 
-'''
-
 == Java Stream Operation
 ==== External Iteration vs Internal Iteration
 - With Collections we use external iteration. In external iteration we use a for or for each loop or obtain an iterator for a collection and process elements of the collections in a sequence.
@@ -95,13 +93,19 @@ The Streams API can convert an ordered stream to unordered or viceversa by apply
 You can create a stream:
 
 - from values: _<T> Stream<T> of(T t) or <T> Stream<T> of(T...values)_
-- from Empty streams
-- from functions
-- from arrays
-- from collections
-- from files
+- from Empty streams: _<T> Stream<T> empty()_
+- from functions: _<T> Stream<T> iterate(T  seed, UnaryOperator<T> f) or <T> Stream<T> generate(Supplier<T> s)_
+- from arrays or from collections: _Arrays.stream_ or _collection.stream() / collection.parallelStream()_
+- from Strings: _chars()_ from CharSequence interface returns an IntStream, values representing characters. _chars()_ method on a String, StringBuilder, and StringBuffer return a stream of chars.
+  _splitAsStream(CharSequence input)_ method from the java.util.regex.Pattern class returns a stream of String whose elements match the pattern.
+- from files:  p.e: _Files.lines(path)_ read contents of a file using a stream or _Files.walk(dir)_ for read a path using stream
 - from other sources
 
-IntStream, LongStream, DoubleStream from range: _range(int start, int end) or rangeClosed(int start, int end)_
+IntStream, LongStream, DoubleStream from range -> _range(int start, int end) or rangeClosed(int start, int end)_
 
-Stream interface to create an empty sequential stream: Stream.empty();
+IntStream, LongStream, DoubleStream random values (infinite stream) -> java.util.Random class provides ints(), longs(), and doubles() return infinite IntStream.
+Other way is with new Random()::nextInt.
+
+==== Intermediate Operations
+- *limit*: Returns a stream consisting of the elements of this stream, truncated to be no longer than maxSize in length.
+- *skip*: Returns a stream consisting of the remaining elements of this stream after discarding the first n elements of the stream.
