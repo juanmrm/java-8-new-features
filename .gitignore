@@ -65,5 +65,7 @@ fabric.properties
 
 # Added Manual exclusions
 
+target
+
 java-8-new-features.iml
 

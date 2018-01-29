@@ -170,6 +170,14 @@ Other way is with new Random()::nextInt.
 |Terminal
 |Applies a reduction operation to computes a single value from the stream.
 
+|collect
+|Terminal
+|To group data in a Stream. The collect() method is overloaded with two versions: _<R> R collect(Supplier<R> supplier, BiConsumer<R,? super T> accumulator, BiConsumer<R,R> combiner) or <R,A> R collect(Collector<?  super T,A,R> collector)_
+
+|count
+|Terminal
+|Count the elements in this stream.
+
 |===
 
 

@@ -36,7 +36,7 @@ public class Employee {
         Employee p3 = new Employee(3, "Jane", Gender.FEMALE, LocalDate.of(1973, Month.MAY, 29), 5455.0);
         Employee p4 = new Employee(4, "Jode", Gender.MALE, LocalDate.of(1974, Month.OCTOBER, 16), 1800.0);
         Employee p5 = new Employee(5, "Jeny", Gender.FEMALE, LocalDate.of(1975, Month.DECEMBER, 13), 1234.0);
-        Employee p6 = new Employee(6, "Jason", Gender.MALE, LocalDate.of(1976, Month.JUNE, 9), 3211.0);
+        Employee p6 = new Employee(6, "Jake", Gender.MALE, LocalDate.of(1976, Month.JUNE, 9), 3211.0);
 
         List<Employee> persons = Arrays.asList(p1, p2, p3, p4, p5, p6);
 
