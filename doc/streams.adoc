@@ -106,6 +106,70 @@ IntStream, LongStream, DoubleStream from range -> _range(int start, int end) or 
 IntStream, LongStream, DoubleStream random values (infinite stream) -> java.util.Random class provides ints(), longs(), and doubles() return infinite IntStream.
 Other way is with new Random()::nextInt.
 
-==== Intermediate Operations
-- *limit*: Returns a stream consisting of the elements of this stream, truncated to be no longer than maxSize in length.
-- *skip*: Returns a stream consisting of the remaining elements of this stream after discarding the first n elements of the stream.
+==== Operations
+|===
+| Nombre | Tipo | Descripción
+
+|distinct
+|Intermediate
+|Returns a stream consisting of the distinct elements by checking equals() method.
+
+|filter
+|Intermediate
+|Returns a stream that match the specified predicate.
+
+|flatMap
+|Intermediate
+|Produces a stream flattened. Supports one-to-many mapping. It maps each element to a stream and then flaten the stream of streams to a stream.
+
+|limit
+|Intermediate
+|truncates a stream by number.
+
+|map
+|Intermediate
+|Performs one-to-one mapping on the stream and returns a NEW stream.
+
+|peek
+|Intermediate
+|Applies the action for debugging.
+
+|skip
+|Intermediate
+|Discards the first n elements and returns the remaining stream. If this stream contains fewer than requested, an empty stream is returned.
+
+|sorted
+|Intermediate
+|Sort a stream according to natural order or the specified Comparator. For an ordered stream, the sort is stable.
+
+|allMatch
+|Terminal
+|Returns true if all elements in the stream match the specified predicate, false otherwise. Returns true if the stream is empty.
+
+|anyMatch
+|Terminal
+|Returns true if any element in the stream matches the specified predicate, false otherwise. Returns false if the stream is empty.
+
+|findAny
+|Terminal
+|Returns any element from the stream. Returns an empty Optional object for an empty stream.
+
+|findFirst
+|Terminal
+|Returns the first element of the stream. For an ordered stream, it returns the first element; for an unordered stream, it returns any element.
+
+|noneMatch
+|Terminal
+|Returns true if no elements in the stream match the specified predicate, false otherwise. Returns true if the stream is empty.
+
+|forEach
+|Terminal
+|Applies an action for each element in the stream.
+
+|reduce
+|Terminal
+|Applies a reduction operation to computes a single value from the stream.
+
+|===
+
+

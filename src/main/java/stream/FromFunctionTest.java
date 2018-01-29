@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-class StreamFromFunctionTest {
+class FromFunctionTest {
 
     public static void main(String[] args) {
         // Generate first 10 natural numbers
@@ -14,13 +14,13 @@ class StreamFromFunctionTest {
 
         // First 5 odd numbers starting fron 2.
         Stream.iterate(2L, n  ->  n  + 1)
-                .filter(StreamFromFunctionTest::isOdd)
+                .filter(FromFunctionTest::isOdd)
                 .limit(5)
                 .forEach(System.out::println);
 
         // Skip the first 100 generated values
         Stream.iterate(2L, n  ->  n  + 1)
-                .filter(StreamFromFunctionTest::isOdd)
+                .filter(FromFunctionTest::isOdd)
                 .skip(100)
                 .limit(5)
                 .forEach(System.out::println);
@@ -31,7 +31,7 @@ class StreamFromFunctionTest {
                 .forEach(System.out::println);
 
         // Generate a unordered stream in which the next element is generated based on the previous one
-        Stream.generate(StreamFromFunctionTest::next)
+        Stream.generate(FromFunctionTest::next)
                 .limit(5)
                 .forEach(System.out::println);
 

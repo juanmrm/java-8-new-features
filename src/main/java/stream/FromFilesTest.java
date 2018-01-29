@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-public class StreamFromFilesTest {
+public class FromFilesTest {
 
     public static void main(String[] args) {
 
@@ -20,7 +20,7 @@ public class StreamFromFilesTest {
             e.printStackTrace();
         }
 
-        Path path = Paths.get("src", "main", "java", "stream", "StreamFromFilesTest.java");
+        Path path = Paths.get("src", "main", "java", "stream", "FromFilesTest.java");
         try(BufferedReader br = Files.newBufferedReader(path)){
             br.lines().forEach(System.out::println);
         } catch (IOException e) {

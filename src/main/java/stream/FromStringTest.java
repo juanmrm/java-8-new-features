@@ -2,7 +2,7 @@ package stream;
 
 import java.util.regex.Pattern;
 
-public class StreamFromStringTest {
+public class FromStringTest {
 
     public static void main(String[] args) {
         String str1 = "5 123,123,qwe,1,123, 25";
