@@ -29,7 +29,11 @@ The result of an aggregate operation on stream may be a primitive value, an obje
 - With Collections we use external iteration. In external iteration we use a for or for each loop or obtain an iterator for a collection and process elements of the collections in a sequence.
 - With Stream we didn't use loop statement to iterate through the List. We did the loop internally by stream.
 
-==== Sequential
+==== Sequential vs Parallel
+Streams can be sequential or parallel.
+
+- Operations on a sequential stream are processed in serial by one thread.
+- Operations on a parallel stream are processed in parallel using multiple threads.
 - External iteration typically means sequential code -> sequential code can be executed only by one thread.
 - Streams are designed to process elements in parallel -> just replace stream() with parallelStream().
 
