@@ -15,6 +15,7 @@ class TesterScope {
         func1.accept("");
     }
 
+    @FunctionalInterface
     interface GreetingService {
         void sayMessage(String message);
     }

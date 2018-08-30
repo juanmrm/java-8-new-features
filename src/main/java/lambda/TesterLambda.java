@@ -36,10 +36,12 @@ class TesterLambda {
         greetService2.sayMessage("Suresh");
     }
 
+    @FunctionalInterface
     interface MathOperation {
         int operation(int a, int b);
     }
 
+    @FunctionalInterface
     interface GreetingService {
         void sayMessage(String message);
     }
