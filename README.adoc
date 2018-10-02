@@ -12,4 +12,5 @@ With the Java 8 release, Java provided supports for functional programming, new 
 - Date Time API: improved date time API.
 - Optional: emphasis on best practices to handle null values properly.
 - Nashorn, JavaScript Engine: a Java-based engine to execute JavaScript code.
-- CompletableFuture: composable asynchronous programming
+- CompletableFuture: composable asynchronous programming (see https://github.com/juanmrm/completablefuture)
+
